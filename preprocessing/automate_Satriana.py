@@ -17,6 +17,8 @@ Dataset : Student Performance in Exams
 
 import pandas as pd
 import numpy as np
+import os
+import argparse
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 
@@ -111,10 +113,21 @@ def preprocess_students_data(input_path, output_path):
 
 # Contoh penggunaan fungsi preprocess_students_data
 if __name__ == "__main__":
-    input_path = 'studentsperformance_raw/StudentsPerformance.csv'  # dataset asli
-    output_path = 'preprocessing/studentsperformance_preprocessing/StudentsPerformance_preprocessing.csv' # dataset hasil preprocessing
-    results = preprocess_students_data(input_path, output_path)
 
-    print("Data preprocessing selesai.")
-    print("Dataframe shape:", results['df'].shape)
-    print("Hasil preprocessing tersimpan di:", output_path)
+    # --- Tambahan opsional: parsing argumen (supaya bisa diubah lewat GitHub Actions) ---
+    parser = argparse.ArgumentParser(description="Automated preprocessing for Student Performance dataset.")
+    parser.add_argument("--input_path", default="studentsperformance_raw/StudentsPerformance.csv", help="Path ke dataset asli (raw).")
+    parser.add_argument("--output_path", default="preprocessing/studentsperformance_preprocessing/StudentsPerformance_preprocessing.csv", help="Path untuk menyimpan hasil preprocessing.")
+    args = parser.parse_args()
+
+    # Pastikan folder output ada (jika belum, otomatis dibuat)
+    os.makedirs(os.path.dirname(args.output_path), exist_ok=True)
+
+    # Jalankan fungsi utama preprocessing
+    results = preprocess_students_data(args.input_path, args.output_path)
+
+    # Print ringkasan hasil
+    print("✅ Data preprocessing selesai.")
+    print("📊 Bentuk DataFrame akhir:", results['df'].shape)
+    print("💾 Hasil preprocessing tersimpan di:", args.output_path)
+
