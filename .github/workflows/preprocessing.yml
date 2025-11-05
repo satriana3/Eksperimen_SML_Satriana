@@ -6,6 +6,9 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 # Untuk menentuka OS tempat workflow dijalankan
 jobs:
   run-preprocessing:
@@ -53,3 +56,5 @@ jobs:
           git add preprocessing/studentsperformance_preprocessing/StudentsPerformance_preprocessing.csv
           git commit -m "Add latest preprocessed dataset" || echo "No changes to commit"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
