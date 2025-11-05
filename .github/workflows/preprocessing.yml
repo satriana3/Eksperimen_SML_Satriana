@@ -28,7 +28,7 @@ jobs:
         run: |
           python preprocessing/automate_Satriana.py \
             --input_path studentsperformance_raw/StudentsPerformance.csv \
-            --output_path preprocessing/studentsperformance_preprocessing/StudentsPerformance_processed.csv
+            --output_path preprocessing/studentsperformance_preprocessing/StudentsPerformance_preprocessing.csv
 
       - name: List output folder
         run: ls -la preprocessing/studentsperformance_preprocessing || true
