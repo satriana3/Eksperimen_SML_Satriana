@@ -32,7 +32,7 @@ def preprocess_students_data(input_path, output_path):
   3. Menghapus data duplikat
   4. Melakukan normalisasi data menggunakan StandardScaler.
   5. Deteksi dan penanganan outlier
-  6. Melakukan encoding pada kolom kategoorical.
+  6. Melakukan encoding pada kolom kategorical.
   7. Binning (pengelompokkan data)
   8. Split dataset menjadi data train dan test.
   9. Simpan hasil preprocessing ke dalam file CSV.
