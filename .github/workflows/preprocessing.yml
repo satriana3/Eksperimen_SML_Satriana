@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   run-preprocessing:
@@ -25,10 +26,15 @@ jobs:
 
       - name: Run preprocessing script
         run: |
-          python preprocessing/automate_Satriana.py
+          python preprocessing/automate_Satriana.py \
+            --input_path studentsperformance_raw/StudentsPerformance.csv \
+            --output_path preprocessing/studentsperformance_preprocessing/StudentsPerformance_processed.csv
 
-      - name: Upload processed dataset
+      - name: List output folder
+        run: ls -la preprocessing/studentsperformance_preprocessing || true
+
+      - name: Upload processed dataset as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: processed_dataset
+          name: students-processed
           path: preprocessing/studentsperformance_preprocessing/StudentsPerformance_preprocessing.csv
