@@ -16,22 +16,33 @@ Struktur Folder:
 
 Eksperimen_SML_Satriana                                                                                                                                                                      
 ├── .github/
-|
+
 │   └── workflows/
-|
+
 │       └── preprocess.yml          # Workflow GitHub Actions
-|
+
 │
+
 ├── studentsperformance_raw/        # Dataset mentah (raw dataset)
+
 │   └── StudentsPerformance.csv
+
 │
+
 ├── preprocessing/
+
 │   ├── Eksperimen_Satriana.ipynb   # Eksperimen preprocessing awal (Jupyter Notebook)
+
 │   ├── automate_Satriana.py        # Script otomatis untuk preprocessing
+
 │   └── studentsperformance_preprocessing/
+
 │       └── StudentsPerformance_preprocessing.csv   # Hasil preprocessing (otomatis dihasilkan)
+
 │
+
 ├── requirements.txt                # Daftar dependencies yang digunakan
+
 └── README.md                       # Dokumentasi proyek
 
 
