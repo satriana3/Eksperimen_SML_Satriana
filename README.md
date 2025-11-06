@@ -13,6 +13,7 @@ Adapun Tujuan Proyek ini:
 3. Membuat workflow otomatis dengan Github Actions agar preprocessing dapat berjalan otomatis setiap kali ada perubahan di branch main
 
 Struktur Folder:
+
 Eksperimen_SML_Satriana
 ├── .github/
 │   └── workflows/
@@ -32,17 +33,18 @@ Eksperimen_SML_Satriana
 
 Tahapan Preprocessing:
 Scrips pada fioe automate_Satriana.py akan secara otomatis menjalankan tahapan-tahapan:
-1. Membaca dataset dari studentsperformance_raw/StudentsPerformance.csv
-2. Mendeteksi serta menangani nilai kosong atau missing value dengan menghapusnya
-3. Akan menghapus data yang duplikat
-4. Melakukan normalisasi data dengan StandardScaler pada kolom numerik
-5. Mendekteksi dan menangangani outlier
-6. Membuat kolom baru yaitu average_score yang berisi rata-rata nilai
-7. Melakukan Encoding pada kolom kategorical menggunakan LabelEncoder
-8. melakukan Binning pada nilai dengan ketentuan 0-60 = low, 60-80 = medium, 80-100 = Hight
-9. Split dataset manjadi data train dan test
-10. Menyimpan hasil preprocessing ke dalam file CSV yang akan tersimpan pada 
-    preprocessing/studentsperformance_preprocessing/StudentsPerformance_preprocessing.csv
+Tahapan preprocessing yang dilakukan:
+  1. Membaca data dari file CSV.
+  2. Menangani missing value.
+  3. Menghapus data duplikat
+  4. Deteksi dan penanganan outlier
+  5. Melakukan normalisasi data menggunakan StandardScaler.
+  6. Membuat kolom rata-rata (average score)
+  7. Melakukan encoding pada kolom kategorical.
+  8. Binning (pengelompokkan data)
+  9. Split dataset menjadi data train dan test.
+  10. Simpan hasil preprocessing ke dalam file CSV.
+preprocessing/studentsperformance_preprocessing/StudentsPerformance_preprocessing.csv
 
 Automatisasi Workflow (Github Actions)
 untuk file workflow terletak di
