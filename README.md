@@ -14,7 +14,7 @@ Adapun Tujuan Proyek ini:
 
 Struktur Folder:
 
-Eksperimen_SML_Satriana
+Eksperimen_SML_Satriana                                                                                                                                                                      
 ├── .github/
 │   └── workflows/
 │       └── preprocess.yml          # Workflow GitHub Actions
@@ -30,6 +30,7 @@ Eksperimen_SML_Satriana
 │
 ├── requirements.txt                # Daftar dependencies yang digunakan
 └── README.md                       # Dokumentasi proyek
+
 
 Tahapan Preprocessing:
 Scrips pada fioe automate_Satriana.py akan secara otomatis menjalankan tahapan-tahapan:
